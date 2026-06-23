@@ -478,6 +478,70 @@
       color: var(--muted); font-size: 0.8rem;
     }
 
+    /* MARKETPLACES */
+    #marketplaces { background: var(--bg); }
+    .mp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+    .mp-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem 1.25rem;
+      text-align: center; transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .mp-card:hover { border-color: rgba(0,194,255,0.4); transform: translateY(-4px); }
+    .mp-logo {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900; margin: 0 auto 0.9rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .mp-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .mp-note { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+
+    /* GEO */
+    #geo { background: var(--surface); }
+    .geo-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .geo-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      transition: border-color 0.2s;
+    }
+    .geo-card:hover { border-color: rgba(0,194,255,0.3); }
+    .geo-region {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .geo-countries {
+      font-size: 0.78rem; color: var(--accent); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .geo-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .geo-bullets li {
+      font-size: 0.875rem; color: var(--muted);
+      padding-left: 1.25rem; position: relative; line-height: 1.6;
+    }
+    .geo-bullets li::before {
+      content: '\25B9'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.8rem;
+    }
+    .geo-bullets li strong { color: var(--text); font-weight: 500; }
+
+    @media (max-width: 700px) {
+      .geo-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -513,6 +577,8 @@
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#marketplaces">Marketplaces</a></li>
+    <li><a href="#geo">Global</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -730,6 +796,110 @@
         <div class="impact-big">$175M</div>
         <div class="impact-desc"><strong>Grocery eCommerce Revenue</strong>Built Sears Grocery/Drug eCommerce from the ground up — 54% YoY in 2015, 90% in 2016, on path to $175M in 2017.</div>
         <div class="impact-bar-wrap"><div class="impact-bar" style="width:75%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETPLACES -->
+<section id="marketplaces">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Marketplace Expertise</div>
+      <h2>Pureplay Marketplace Footprint</h2>
+      <p class="section-sub">Built and scaled businesses across every major marketplace — from zero to category-leading positions.</p>
+    </div>
+    <div class="mp-grid reveal">
+      <div class="mp-card" style="--mp-color:#FF9900">
+        <div class="mp-logo" style="background:#FF9900;color:#111;">a</div>
+        <div class="mp-name">Amazon</div>
+        <div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#0071CE">
+        <div class="mp-logo" style="background:#0071CE;color:#fff;font-size:0.7rem;font-weight:800;letter-spacing:-0.02em;">WAL&#x2605;MART</div>
+        <div class="mp-name">Walmart</div>
+        <div class="mp-note">Marketplace seller &amp; retail media · US</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#CC0000">
+        <div class="mp-logo" style="background:#CC0000;color:#fff;font-size:1.6rem;">&#x2B55;</div>
+        <div class="mp-name">Target+</div>
+        <div class="mp-note">Target Plus marketplace &amp; digital shelf</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#E53238">
+        <div class="mp-logo" style="background:linear-gradient(135deg,#E53238,#0064D2,#F5AF02,#86B817);color:#fff;font-weight:900;font-size:1rem;">e</div>
+        <div class="mp-name">eBay</div>
+        <div class="mp-note">Multi-category seller · US &amp; international</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#00f2ea">
+        <div class="mp-logo" style="background:#010101;color:#fff;font-weight:900;font-size:0.85rem;">Tik<span style="color:#ff0050;">Tok</span></div>
+        <div class="mp-name">TikTok Shop</div>
+        <div class="mp-note">Social commerce &amp; creator-led selling</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#BF0000">
+        <div class="mp-logo" style="background:#BF0000;color:#fff;font-weight:900;font-size:0.85rem;">R</div>
+        <div class="mp-name">Rakuten</div>
+        <div class="mp-note">Marketplace &amp; affiliate partnerships</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#E44424">
+        <div class="mp-logo" style="background:#E44424;color:#fff;font-weight:900;font-size:0.85rem;">N</div>
+        <div class="mp-name">Newegg</div>
+        <div class="mp-note">Electronics &amp; tech marketplace seller</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#06C167">
+        <div class="mp-logo" style="background:#06C167;color:#fff;font-weight:900;font-size:0.85rem;">Ue</div>
+        <div class="mp-name">Uber Eats</div>
+        <div class="mp-note">Last-mile &amp; on-demand retail delivery</div>
+      </div>
+      <div class="mp-card" style="--mp-color:#FF3008">
+        <div class="mp-logo" style="background:#FF3008;color:#fff;font-weight:900;font-size:0.85rem;">DD</div>
+        <div class="mp-name">DoorDash</div>
+        <div class="mp-note">On-demand delivery &amp; DashMart integration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEO -->
+<section id="geo">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Global Reach</div>
+      <h2>Geographic Experience</h2>
+      <p class="section-sub">Built and scaled digital commerce businesses across four continents.</p>
+    </div>
+    <div class="geo-grid">
+      <div class="geo-card reveal">
+        <div class="geo-region">&#x1F1FA;&#x1F1F8; North America</div>
+        <div class="geo-countries">USA &middot; Canada &middot; Mexico</div>
+        <ul class="geo-bullets">
+          <li>Scaled Party City eCommerce to <strong>$400M+</strong> across US; expanded cross-border into Canada and Mexico via Amazon and marketplace channels.</li>
+          <li>Built Sears Grocery/Drug eCommerce across the US, growing to <strong>$175M+</strong> in revenue.</li>
+          <li>Led DTC and marketplace expansion for Newell Brands, Dormify, and Ripple Junction across North America.</li>
+        </ul>
+      </div>
+      <div class="geo-card reveal">
+        <div class="geo-region">&#x1F1EC;&#x1F1E7; Europe</div>
+        <div class="geo-countries">UK &middot; Germany &middot; France &middot; Italy &middot; Spain</div>
+        <ul class="geo-bullets">
+          <li>Led Ripple Junction's <strong>EU5 marketplace expansion</strong> (UK, DE, FR, IT, ES) on Amazon Europe — building assortment, content, and media strategy from zero.</li>
+          <li>Managed EMEA eCommerce expansion at Newell Brands across DTC and Amazon channels for Graco, Baby Jogger, and writing brands.</li>
+        </ul>
+      </div>
+      <div class="geo-card reveal">
+        <div class="geo-region">&#x1F1EF;&#x1F1F5; Japan &amp; Asia</div>
+        <div class="geo-countries">Japan &middot; Asia-Pacific</div>
+        <ul class="geo-bullets">
+          <li>Scaled Ripple Junction's <strong>Amazon Japan</strong> business as part of global marketplace expansion into Asia-Pacific.</li>
+          <li>Developed market entry strategies and localized content approaches for JP marketplace launch.</li>
+        </ul>
+      </div>
+      <div class="geo-card reveal">
+        <div class="geo-region">&#x1F1EE;&#x1F1F3; India</div>
+        <div class="geo-countries">Bangalore &middot; National campaigns</div>
+        <ul class="geo-bullets">
+          <li>Built brand and marketing career at <strong>JWT (WPP), Lowe &amp; Partners (IPG)</strong>, and Fisheye Creative Solutions — managing national campaigns for Levi's, ING Bank, Britannia, Hanes, and Jockey.</li>
+          <li>Won $5M+ in new business across consumer, retail, and financial services categories.</li>
+        </ul>
       </div>
     </div>
   </div>
