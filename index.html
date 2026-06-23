@@ -64,7 +64,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .hero-photo-ring::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--bg); margin: 3px; }
     .hero-photo { position: absolute; inset: 8px; border-radius: 50%; overflow: hidden; z-index: 1; background: var(--card); display: flex; align-items: center; justify-content: center; }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 33%; }
     .hero-badge { position: absolute; bottom: 10px; right: -10px; z-index: 2; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
     .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #00E676; flex-shrink: 0; }
     .hero-badge span { color: var(--muted); }
@@ -112,12 +112,20 @@
     .mp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
     .mp-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 1.25rem; text-align: center; transition: all 0.3s; }
     .mp-card:hover { border-color: rgba(0,194,255,0.4); transform: translateY(-4px); }
-    .mp-logo { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; margin: 0 auto 0.9rem; font-family: 'Space Grotesk', sans-serif; }
+    .mp-logo { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.9rem; }
     .mp-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
     .mp-note { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
 
+    /* CATEGORIES */
+    #categories { background: var(--surface); }
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .cat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.25rem; display: flex; align-items: center; gap: 1rem; transition: all 0.3s; }
+    .cat-card:hover { border-color: rgba(0,194,255,0.35); transform: translateY(-3px); }
+    .cat-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .cat-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+
     /* GEO */
-    #geo { background: var(--surface); }
+    #geo { background: var(--bg); }
     .geo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .geo-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: border-color 0.2s; }
     .geo-card:hover { border-color: rgba(0,194,255,0.3); }
@@ -128,7 +136,7 @@
     .geo-bullets li::before { content: '\25B9'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
     .geo-bullets li strong { color: var(--text); font-weight: 500; }
 
-    #experience { background: var(--bg); }
+    #experience { background: var(--surface); }
     .timeline { position: relative; }
     .timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent); opacity: 0.3; }
     .timeline-group { margin-bottom: 3rem; }
@@ -146,7 +154,7 @@
     .timeline-bullets li::before { content: '\25B9'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
     .timeline-bullets li strong { color: var(--text); font-weight: 500; }
 
-    #impact { background: var(--surface); }
+    #impact { background: var(--bg); }
     .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .impact-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; position: relative; overflow: hidden; }
     .impact-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
@@ -156,7 +164,7 @@
     .impact-bar-wrap { background: rgba(0,194,255,0.08); border-radius: 100px; height: 6px; margin-top: 1.25rem; overflow: hidden; }
     .impact-bar { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
 
-    #testimonials { background: var(--bg); }
+    #testimonials { background: var(--surface); }
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
     .testimonial-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
     .quote-mark { font-size: 4rem; line-height: 1; color: var(--accent); opacity: 0.2; font-family: Georgia, serif; margin-bottom: 0.5rem; display: block; }
@@ -166,20 +174,20 @@
     .author-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
     .author-title { font-size: 0.78rem; color: var(--muted); }
 
-    #recognition { background: var(--surface); }
+    #recognition { background: var(--bg); }
     .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
     .award-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; }
     .award-icon { font-size: 1.5rem; flex-shrink: 0; }
     .award-title { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
     .award-org { font-size: 0.8rem; color: var(--muted); }
 
-    #contact { background: var(--bg); text-align: center; }
+    #contact { background: var(--surface); text-align: center; }
     .contact-inner { max-width: 620px; margin: 0 auto; }
     .contact-inner h2 { margin-bottom: 0.75rem; }
     .contact-inner p { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
     .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    footer { background: var(--surface); border-top: 1px solid var(--border); text-align: center; padding: 2rem 6%; color: var(--muted); font-size: 0.8rem; }
+    footer { background: var(--bg); border-top: 1px solid var(--border); text-align: center; padding: 2rem 6%; color: var(--muted); font-size: 0.8rem; }
 
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -203,6 +211,7 @@
       .impact-grid { grid-template-columns: 1fr; }
       section { padding: 4rem 5%; }
       .hero-badge { display: none; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -303,7 +312,7 @@
     <div class="reveal">
       <div class="section-tag">Expertise</div>
       <h2>What I Do Best</h2>
-      <p class="section-sub">Seven deep capability areas built across 15+ years and $400M+ in managed digital revenue.</p>
+      <p class="section-sub">Nine deep capability areas built across 15+ years and $400M+ in managed digital revenue.</p>
     </div>
     <div class="expertise-grid">
       <div class="expertise-card reveal"><div class="card-icon">&#x1F6D2;</div><div class="card-title">Direct-to-Consumer (DTC) eCommerce</div><div class="card-body">Scaled DTC P&amp;Ls to $400M with full accountability for revenue, margin, CAC, retention, forecasting, and inventory. Rebuilt growth engines across merchandising, UX/CRO, pricing, fulfillment, and lifecycle marketing. Protected 8-figure monthly revenue run-rates through rapid pandemic-era pivots.</div><div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">SFCC</span><span class="card-tag">Magento</span><span class="card-tag">BigComm</span><span class="card-tag">CRO</span><span class="card-tag">P&amp;L</span></div></div>
@@ -313,6 +322,8 @@
       <div class="expertise-card reveal"><div class="card-icon">&#x2709;&#xFE0F;</div><div class="card-title">Email, CRM &amp; Retention Growth</div><div class="card-body">Positioned email and CRM as core profit levers — behavior-driven lifecycle marketing, not batch-and-blast. Built retention engines spanning onboarding, replenishment, engagement, and reactivation. Grew owned list to 600K+ customers and drove email to 20&#x2013;30%+ of DTC revenue.</div><div class="card-tags"><span class="card-tag">Klaviyo</span><span class="card-tag">Lifecycle</span><span class="card-tag">Segmentation</span><span class="card-tag">LTV</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x1F5FA;&#xFE0F;</div><div class="card-title">eCommerce Transformation &amp; Roadmaps</div><div class="card-body">Transformed under-leveraged digital businesses with clear multi-year roadmaps, focused execution, and disruptive growth strategies. Led org design, capability build-out, and technology modernization. Converted strategy into measurable EBITDA impact consistently.</div><div class="card-tags"><span class="card-tag">0&#x2192;1 Launch</span><span class="card-tag">Roadmaps</span><span class="card-tag">Org Design</span><span class="card-tag">Tech Modernization</span><span class="card-tag">CX Journeys</span><span class="card-tag">Digital Technology Roadmaps</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x1F91D;</div><div class="card-title">Business Development &amp; Partnerships</div><div class="card-body">Created 100+ vendor partnerships to expand assortment and marketplace reach. Led agency selection for content and performance marketing. Forged third-party fulfillment and print-on-demand partnerships generating $20M+ in Year 1. Won $3M+ in new business as a consultant at JWT and Lowe &amp; Partners.</div><div class="card-tags"><span class="card-tag">Vendor Partnerships</span><span class="card-tag">Agency Relations</span><span class="card-tag">Marketplace Expansion</span></div></div>
+      <div class="expertise-card reveal"><div class="card-icon">&#x1F4B0;</div><div class="card-title">P&amp;L, Profitability &amp; Commercial Leadership</div><div class="card-body">Owned and scaled eCommerce P&amp;Ls exceeding $350M, balancing revenue growth with gross margin, contribution profit, inventory productivity, and EBITDA. Built financial models connecting pricing, promotions, media, fulfillment, and returns to profitability. Established KPI operating rhythms and translated digital strategy into measurable business outcomes.</div><div class="card-tags"><span class="card-tag">P&amp;L</span><span class="card-tag">Contribution Margin</span><span class="card-tag">EBITDA</span><span class="card-tag">Pricing</span><span class="card-tag">Forecasting</span></div></div>
+      <div class="expertise-card reveal"><div class="card-icon">&#x1F6CD;&#xFE0F;</div><div class="card-title">Digital Merchandising, Assortment &amp; Product Innovation</div><div class="card-body">Built category and assortment strategies across 30+ consumer brands and multiple retail verticals. Used customer, search, and sales data to optimize product mix, pricing, bundles, seasonality, and inventory. Created new revenue streams through marketplace kits, personalization, print-on-demand, and licensed products — driving significant incremental sales and stronger margins.</div><div class="card-tags"><span class="card-tag">Digital Category Strategy</span><span class="card-tag">Assortment</span><span class="card-tag">Pricing</span><span class="card-tag">Bundles</span><span class="card-tag">Product Innovation</span></div></div>
     </div>
   </div>
 </section>
@@ -325,15 +336,60 @@
       <p class="section-sub">Built and scaled businesses across every major marketplace — from zero to category-leading positions.</p>
     </div>
     <div class="mp-grid reveal">
-      <div class="mp-card"><div class="mp-logo" style="background:#FF9900;color:#111;font-size:1.6rem;">a</div><div class="mp-name">Amazon</div><div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#0071CE;color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:-0.02em;">WAL&#x2605;MART</div><div class="mp-name">Walmart</div><div class="mp-note">Marketplace seller &amp; retail media · US</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#CC0000;color:#fff;font-size:1.6rem;">&#x2B55;</div><div class="mp-name">Target+</div><div class="mp-note">Target Plus marketplace &amp; digital shelf</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:linear-gradient(135deg,#E53238,#0064D2,#F5AF02,#86B817);color:#fff;font-weight:900;font-size:1rem;">e</div><div class="mp-name">eBay</div><div class="mp-note">Multi-category seller · US &amp; international</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#010101;color:#fff;font-weight:900;font-size:0.85rem;">Tik<span style="color:#ff0050;">Tok</span></div><div class="mp-name">TikTok Shop</div><div class="mp-note">Social commerce &amp; creator-led selling</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#BF0000;color:#fff;font-weight:900;font-size:1.3rem;">R</div><div class="mp-name">Rakuten</div><div class="mp-note">Marketplace &amp; affiliate partnerships</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#E44424;color:#fff;font-weight:900;font-size:1.3rem;">N</div><div class="mp-name">Newegg</div><div class="mp-note">Electronics &amp; tech marketplace seller</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#06C167;color:#fff;font-weight:900;font-size:0.85rem;">Ue</div><div class="mp-name">Uber Eats</div><div class="mp-note">Last-mile &amp; on-demand retail delivery</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#FF3008;color:#fff;font-weight:900;font-size:0.85rem;">DD</div><div class="mp-name">DoorDash</div><div class="mp-note">On-demand delivery &amp; DashMart integration</div></div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(255,153,0,0.12);border:1px solid rgba(255,153,0,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="3" stroke="#FF9900" stroke-width="2"/><path d="M9 14h10M14 10v8" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/><path d="M7 22l2-2M21 22l-2-2" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mp-name">Amazon</div><div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(0,113,206,0.12);border:1px solid rgba(0,113,206,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#0071CE" stroke-width="2"/><path d="M14 4v4M14 20v4M4 14h4M20 14h4" stroke="#0071CE" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="#0071CE"/></svg>
+        </div>
+        <div class="mp-name">Walmart</div><div class="mp-note">Marketplace seller &amp; retail media · US</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(204,0,0,0.10);border:1px solid rgba(204,0,0,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#CC0000" stroke-width="2"/><circle cx="14" cy="14" r="5" stroke="#CC0000" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="#CC0000"/></svg>
+        </div>
+        <div class="mp-name">Target+</div><div class="mp-note">Target Plus marketplace &amp; digital shelf</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(0,100,210,0.10);border:1px solid rgba(0,100,210,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 8h18M5 14h10M5 20h14" stroke="#0064D2" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="18" r="4" stroke="#E53238" stroke-width="2"/><path d="M19.5 18h3M21 16.5v3" stroke="#E53238" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mp-name">eBay</div><div class="mp-note">Multi-category seller · US &amp; international</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(255,0,80,0.10);border:1px solid rgba(255,0,80,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="8" y="4" width="12" height="20" rx="3" stroke="#ff0050" stroke-width="2"/><path d="M13 9c0 2.5-2 4-2 6s2 3.5 3 3.5" stroke="#ff0050" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="10" r="2" fill="#ff0050"/></svg>
+        </div>
+        <div class="mp-name">TikTok Shop</div><div class="mp-note">Social commerce &amp; creator-led selling</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(191,0,0,0.10);border:1px solid rgba(191,0,0,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 5l2.5 7.5H24l-6 4.5 2.5 7.5L14 20l-6.5 4.5 2.5-7.5L4 12.5h7.5z" stroke="#BF0000" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="mp-name">Rakuten</div><div class="mp-note">Marketplace &amp; affiliate partnerships</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(228,68,36,0.10);border:1px solid rgba(228,68,36,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="8" width="18" height="14" rx="3" stroke="#E44424" stroke-width="2"/><path d="M10 8V6a4 4 0 018 0v2" stroke="#E44424" stroke-width="2"/><path d="M11 15h6M14 12v6" stroke="#E44424" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mp-name">Newegg</div><div class="mp-note">Electronics &amp; tech marketplace seller</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(6,193,103,0.10);border:1px solid rgba(6,193,103,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#06C167" stroke-width="2"/><path d="M10 13l3 3 5-5" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 5v3M14 20v3M5 14h3M20 14h3" stroke="#06C167" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/></svg>
+        </div>
+        <div class="mp-name">Uber Eats</div><div class="mp-note">Last-mile &amp; on-demand retail delivery</div>
+      </div>
+      <div class="mp-card">
+        <div class="mp-logo" style="background:rgba(255,48,8,0.10);border:1px solid rgba(255,48,8,0.3);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 8h14a2 2 0 012 2v8a2 2 0 01-2 2H7a2 2 0 01-2-2v-8a2 2 0 012-2z" stroke="#FF3008" stroke-width="2"/><path d="M12 8V6M16 8V6" stroke="#FF3008" stroke-width="2" stroke-linecap="round"/><path d="M9 14h10" stroke="#FF3008" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mp-name">DoorDash</div><div class="mp-note">On-demand delivery &amp; DashMart integration</div>
+      </div>
     </div>
   </div>
 </section>
@@ -347,7 +403,7 @@
     </div>
     <div class="geo-grid">
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1FA;&#x1F1F8; North America</div>
+        <div class="geo-region">North America</div>
         <div class="geo-countries">USA &middot; Canada &middot; Mexico</div>
         <ul class="geo-bullets">
           <li>Scaled Party City eCommerce to <strong>$400M+</strong> across US; expanded cross-border into Canada and Mexico via Amazon and marketplace channels.</li>
@@ -356,7 +412,7 @@
         </ul>
       </div>
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1EC;&#x1F1E7; Europe</div>
+        <div class="geo-region">Europe</div>
         <div class="geo-countries">UK &middot; Germany &middot; France &middot; Italy &middot; Spain</div>
         <ul class="geo-bullets">
           <li>Led Ripple Junction's <strong>EU5 marketplace expansion</strong> (UK, DE, FR, IT, ES) on Amazon Europe — building assortment, content, and media strategy from zero.</li>
@@ -364,7 +420,7 @@
         </ul>
       </div>
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1EF;&#x1F1F5; Japan &amp; Asia-Pacific</div>
+        <div class="geo-region">Japan &amp; Asia-Pacific</div>
         <div class="geo-countries">Japan &middot; Asia-Pacific</div>
         <ul class="geo-bullets">
           <li>Scaled Ripple Junction's <strong>Amazon Japan</strong> business as part of global marketplace expansion into Asia-Pacific.</li>
@@ -372,13 +428,37 @@
         </ul>
       </div>
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1EE;&#x1F1F3; India</div>
+        <div class="geo-region">India</div>
         <div class="geo-countries">Bangalore &middot; National campaigns</div>
         <ul class="geo-bullets">
           <li>Built brand and marketing career at <strong>JWT (WPP), Lowe &amp; Partners (IPG)</strong>, and Fisheye — managing national campaigns for Levi's, ING Bank, Britannia, Hanes, and Jockey.</li>
           <li>Won $5M+ in new business across consumer, retail, and financial services categories.</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Category Expertise</div>
+      <h2>Digital Leadership Across Key Consumer &amp; Retail Categories</h2>
+      <p class="section-sub">Hands-on experience building and scaling digital commerce across 12 consumer and retail verticals.</p>
+    </div>
+    <div class="cat-grid reveal">
+      <div class="cat-card"><span class="cat-icon">&#x1F96B;</span><span class="cat-name">CPG, Grocery &amp; Household</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F48A;</span><span class="cat-name">Health &amp; Beauty</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F43E;</span><span class="cat-name">Pet Care</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F476;</span><span class="cat-name">Baby</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F457;</span><span class="cat-name">Fashion &amp; Apparel</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F4BB;</span><span class="cat-name">Consumer Electronics</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F9F8;</span><span class="cat-name">Toys</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x26BD;</span><span class="cat-name">Sporting Goods</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F6CB;&#xFE0F;</span><span class="cat-name">Home &amp; Furnishing</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F3D5;&#xFE0F;</span><span class="cat-name">Outdoor &amp; Recreation</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F38A;</span><span class="cat-name">Party Goods &amp; Halloween</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x2728;</span><span class="cat-name">Licensed Products</span></div>
     </div>
   </div>
 </section>
