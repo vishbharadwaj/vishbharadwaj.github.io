@@ -64,11 +64,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .hero-photo-ring::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--bg); margin: 3px; }
     .hero-photo { position: absolute; inset: 8px; border-radius: 50%; overflow: hidden; z-index: 1; background: var(--card); display: flex; align-items: center; justify-content: center; }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 33%; }
-    .hero-badge { position: absolute; bottom: 10px; right: -10px; z-index: 2; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #00E676; flex-shrink: 0; }
-    .hero-badge span { color: var(--muted); }
-    .hero-badge strong { color: var(--text); display: block; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 63%; }
 
     #stats { padding: 4rem 6%; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; max-width: 1200px; margin: 0 auto; background: var(--border); border-radius: 16px; overflow: hidden; }
@@ -111,18 +107,19 @@
     #marketplaces { background: var(--bg); }
     .mp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
     .mp-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 1.25rem; text-align: center; transition: all 0.3s; }
-    .mp-card:hover { border-color: rgba(0,194,255,0.4); transform: translateY(-4px); }
-    .mp-logo { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.9rem; }
+    .mp-card:hover { border-color: rgba(0,194,255,0.4); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .mp-logo { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; transition: transform 0.3s; }
+    .mp-card:hover .mp-logo { transform: scale(1.08); }
     .mp-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
     .mp-note { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
 
     /* CATEGORIES */
     #categories { background: var(--surface); }
-    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
-    .cat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.25rem; display: flex; align-items: center; gap: 1rem; transition: all 0.3s; }
-    .cat-card:hover { border-color: rgba(0,194,255,0.35); transform: translateY(-3px); }
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
+    .cat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; display: flex; align-items: center; gap: 0.9rem; transition: all 0.3s; }
+    .cat-card:hover { border-color: rgba(0,194,255,0.35); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
     .cat-icon { font-size: 1.5rem; flex-shrink: 0; }
-    .cat-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+    .cat-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text); line-height: 1.3; }
 
     /* GEO */
     #geo { background: var(--bg); }
@@ -210,7 +207,6 @@
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .impact-grid { grid-template-columns: 1fr; }
       section { padding: 4rem 5%; }
-      .hero-badge { display: none; }
       .cat-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -251,10 +247,6 @@
         <div class="hero-photo">
           <img src="Vish.jpeg" alt="Vish Bharadwaj" />
         </div>
-      </div>
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        <div><strong>Open to Opportunities</strong><span>New York Metro &amp; Tri-State</span></div>
       </div>
     </div>
   </div>
@@ -316,7 +308,7 @@
     </div>
     <div class="expertise-grid">
       <div class="expertise-card reveal"><div class="card-icon">&#x1F6D2;</div><div class="card-title">Direct-to-Consumer (DTC) eCommerce</div><div class="card-body">Scaled DTC P&amp;Ls to $400M with full accountability for revenue, margin, CAC, retention, forecasting, and inventory. Rebuilt growth engines across merchandising, UX/CRO, pricing, fulfillment, and lifecycle marketing. Protected 8-figure monthly revenue run-rates through rapid pandemic-era pivots.</div><div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">SFCC</span><span class="card-tag">Magento</span><span class="card-tag">BigComm</span><span class="card-tag">CRO</span><span class="card-tag">P&amp;L</span></div></div>
-      <div class="expertise-card reveal"><div class="card-icon">&#x1F4E6;</div><div class="card-title">Amazon &amp; Marketplaces (1P, 3P, Hybrid)</div><div class="card-body">Built Amazon and marketplace businesses from zero to multi-hundred-million-dollar scale. Led retail media, content, PDP optimization, merchandising, vendor negotiations, and margin management. Expanded across North America and EMEA including EU5, Asia, and Japan.</div><div class="card-tags"><span class="card-tag">Amazon</span><span class="card-tag">Walmart</span><span class="card-tag">eBay</span><span class="card-tag">Target+</span><span class="card-tag">TikTok</span><span class="card-tag">DoorDash</span></div></div>
+      <div class="expertise-card reveal"><div class="card-icon">&#x1F4E6;</div><div class="card-title">Amazon &amp; Marketplaces (1P, 3P, Hybrid)</div><div class="card-body">Built Amazon and marketplace businesses from zero to multi-hundred-million-dollar scale. Led retail media, content, PDP optimization, merchandising, vendor negotiations, and margin management. Expanded across North America and EMEA including EU5, Asia, and Japan.</div><div class="card-tags"><span class="card-tag">Amazon</span><span class="card-tag">Walmart</span><span class="card-tag">eBay</span><span class="card-tag">Target+</span><span class="card-tag">TikTok</span><span class="card-tag">Wayfair</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x1F517;</div><div class="card-title">Omnichannel &amp; Retail Partnerships</div><div class="card-body">Architected omnichannel strategies connecting DTC, stores, and last-mile partners. Launched BOPIS, curbside, same-day delivery, and ship-from-store at enterprise speed. Partnered with Walmart, Macy's, Target, The Container Store, Spencer's, and Hot Topic.</div><div class="card-tags"><span class="card-tag">BOPIS</span><span class="card-tag">SDD</span><span class="card-tag">Curbside</span><span class="card-tag">Ship-from-Store</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x1F4C8;</div><div class="card-title">Paid Media &amp; Performance Marketing</div><div class="card-body">Managed $100M+ in annual paid media across Google, Meta, Amazon Ads, affiliates, DSP, Connected TV, and emerging channels. Built performance models grounded in CAC, MER, ROAS, and contribution margin. Achieved $19 ROAS on Amazon at peak.</div><div class="card-tags"><span class="card-tag">Google</span><span class="card-tag">Meta</span><span class="card-tag">Amazon DSP</span><span class="card-tag">CTV</span><span class="card-tag">Affiliates</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x2709;&#xFE0F;</div><div class="card-title">Email, CRM &amp; Retention Growth</div><div class="card-body">Positioned email and CRM as core profit levers — behavior-driven lifecycle marketing, not batch-and-blast. Built retention engines spanning onboarding, replenishment, engagement, and reactivation. Grew owned list to 600K+ customers and drove email to 20&#x2013;30%+ of DTC revenue.</div><div class="card-tags"><span class="card-tag">Klaviyo</span><span class="card-tag">Lifecycle</span><span class="card-tag">Segmentation</span><span class="card-tag">LTV</span></div></div>
@@ -336,60 +328,119 @@
       <p class="section-sub">Built and scaled businesses across every major marketplace — from zero to category-leading positions.</p>
     </div>
     <div class="mp-grid reveal">
+
+      <!-- Amazon -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(255,153,0,0.12);border:1px solid rgba(255,153,0,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="3" stroke="#FF9900" stroke-width="2"/><path d="M9 14h10M14 10v8" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/><path d="M7 22l2-2M21 22l-2-2" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #FF9900 0%, #E07000 100%); box-shadow: 0 6px 20px rgba(255,153,0,0.45);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <rect x="7" y="5" width="16" height="13" rx="2.5" fill="rgba(255,255,255,0.22)" stroke="white" stroke-width="1.6"/>
+            <path d="M11 5V3.5a4 4 0 018 0V5" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <path d="M11 12h8M15 9v6" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M8 25c2.2 1.6 5 2.2 7 2.2s4.8-.6 7-2.2" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M19.5 23.5l2.5 1.7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="mp-name">Amazon</div><div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div>
+        <div class="mp-name">Amazon</div>
+        <div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div>
       </div>
+
+      <!-- Walmart -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(0,113,206,0.12);border:1px solid rgba(0,113,206,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#0071CE" stroke-width="2"/><path d="M14 4v4M14 20v4M4 14h4M20 14h4" stroke="#0071CE" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="#0071CE"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #0071CE 0%, #003E8A 100%); box-shadow: 0 6px 20px rgba(0,113,206,0.45);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="3.5" fill="white"/>
+            <path d="M15 4v5M15 21v5M4 15h5M21 15h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M8.1 8.1l3.5 3.5M18.4 18.4l3.5 3.5M21.9 8.1l-3.5 3.5M11.6 18.4l-3.5 3.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="mp-name">Walmart</div><div class="mp-note">Marketplace seller &amp; retail media · US</div>
+        <div class="mp-name">Walmart</div>
+        <div class="mp-note">Marketplace seller &amp; retail media · US</div>
       </div>
+
+      <!-- Target+ -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(204,0,0,0.10);border:1px solid rgba(204,0,0,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#CC0000" stroke-width="2"/><circle cx="14" cy="14" r="5" stroke="#CC0000" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="#CC0000"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #CC0000 0%, #880000 100%); box-shadow: 0 6px 20px rgba(204,0,0,0.45);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="11" stroke="white" stroke-width="2" fill="rgba(255,255,255,0.1)"/>
+            <circle cx="15" cy="15" r="6.5" stroke="white" stroke-width="2" fill="rgba(255,255,255,0.12)"/>
+            <circle cx="15" cy="15" r="2.5" fill="white"/>
+          </svg>
         </div>
-        <div class="mp-name">Target+</div><div class="mp-note">Target Plus marketplace &amp; digital shelf</div>
+        <div class="mp-name">Target+</div>
+        <div class="mp-note">Target Plus marketplace &amp; digital shelf</div>
       </div>
+
+      <!-- eBay -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(0,100,210,0.10);border:1px solid rgba(0,100,210,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 8h18M5 14h10M5 20h14" stroke="#0064D2" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="18" r="4" stroke="#E53238" stroke-width="2"/><path d="M19.5 18h3M21 16.5v3" stroke="#E53238" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #E53238 0%, #0064D2 50%, #F5AF02 75%, #86B817 100%); box-shadow: 0 6px 20px rgba(229,50,56,0.35);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <rect x="5" y="8" width="20" height="14" rx="2.5" fill="rgba(255,255,255,0.18)" stroke="white" stroke-width="1.6"/>
+            <path d="M5 13h20" stroke="white" stroke-width="1" opacity="0.4"/>
+            <circle cx="10" cy="17" r="1.8" fill="white"/>
+            <path d="M14 17h8" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="10" cy="21" r="1.8" fill="white" opacity="0.6"/>
+            <path d="M14 21h5" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+          </svg>
         </div>
-        <div class="mp-name">eBay</div><div class="mp-note">Multi-category seller · US &amp; international</div>
+        <div class="mp-name">eBay</div>
+        <div class="mp-note">Multi-category seller · US &amp; international</div>
       </div>
+
+      <!-- TikTok Shop -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(255,0,80,0.10);border:1px solid rgba(255,0,80,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="8" y="4" width="12" height="20" rx="3" stroke="#ff0050" stroke-width="2"/><path d="M13 9c0 2.5-2 4-2 6s2 3.5 3 3.5" stroke="#ff0050" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="10" r="2" fill="#ff0050"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #010101 0%, #1a0a1e 100%); box-shadow: 0 6px 20px rgba(255,0,80,0.4); border: 1px solid rgba(255,0,80,0.25);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <rect x="9" y="3" width="12" height="22" rx="3.5" fill="rgba(255,255,255,0.08)" stroke="white" stroke-width="1.6"/>
+            <circle cx="15" cy="22.5" r="1.8" fill="#ff0050"/>
+            <path d="M15 9v7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M15 9l5-1.5v3.5L15 12.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="13.5" cy="16.5" r="2" fill="white"/>
+          </svg>
         </div>
-        <div class="mp-name">TikTok Shop</div><div class="mp-note">Social commerce &amp; creator-led selling</div>
+        <div class="mp-name">TikTok Shop</div>
+        <div class="mp-note">Social commerce &amp; creator-led selling</div>
       </div>
+
+      <!-- Newegg / Electronics & Home Appliances -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(191,0,0,0.10);border:1px solid rgba(191,0,0,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 5l2.5 7.5H24l-6 4.5 2.5 7.5L14 20l-6.5 4.5 2.5-7.5L4 12.5h7.5z" stroke="#BF0000" stroke-width="2" stroke-linejoin="round"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #E44424 0%, #A02A10 100%); box-shadow: 0 6px 20px rgba(228,68,36,0.45);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <rect x="8" y="8" width="14" height="14" rx="2.5" fill="rgba(255,255,255,0.18)" stroke="white" stroke-width="1.6"/>
+            <rect x="12" y="12" width="6" height="6" rx="1" fill="white"/>
+            <path d="M12 4v4M15 4v4M18 4v4M12 22v4M15 22v4M18 22v4M4 12h4M4 15h4M4 18h4M22 12h4M22 15h4M22 18h4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="mp-name">Rakuten</div><div class="mp-note">Marketplace &amp; affiliate partnerships</div>
+        <div class="mp-name">Newegg</div>
+        <div class="mp-note">Home Appliance, Electronics &amp; Tech marketplace seller</div>
       </div>
+
+      <!-- Uber Eats -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(228,68,36,0.10);border:1px solid rgba(228,68,36,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="8" width="18" height="14" rx="3" stroke="#E44424" stroke-width="2"/><path d="M10 8V6a4 4 0 018 0v2" stroke="#E44424" stroke-width="2"/><path d="M11 15h6M14 12v6" stroke="#E44424" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #06C167 0%, #028040 100%); box-shadow: 0 6px 20px rgba(6,193,103,0.45);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M8 11h14l-2 15H10L8 11z" fill="rgba(255,255,255,0.18)" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M11.5 11V9a3.5 3.5 0 017 0v2" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <path d="M11 17h8M15 14.5v5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="mp-name">Newegg</div><div class="mp-note">Electronics &amp; tech marketplace seller</div>
+        <div class="mp-name">Uber Eats</div>
+        <div class="mp-note">Last-mile &amp; on-demand retail delivery</div>
       </div>
+
+      <!-- Wayfair -->
       <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(6,193,103,0.10);border:1px solid rgba(6,193,103,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#06C167" stroke-width="2"/><path d="M10 13l3 3 5-5" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 5v3M14 20v3M5 14h3M20 14h3" stroke="#06C167" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/></svg>
+        <div class="mp-logo" style="background: linear-gradient(135deg, #7B2D8B 0%, #4A1260 100%); box-shadow: 0 6px 20px rgba(123,45,139,0.45);">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M4 16L15 5l11 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.5 13v12h15V13" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255,255,255,0.12)"/>
+            <rect x="12" y="19" width="6" height="6" rx="1" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1.4"/>
+            <path d="M12 22h6" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+          </svg>
         </div>
-        <div class="mp-name">Uber Eats</div><div class="mp-note">Last-mile &amp; on-demand retail delivery</div>
+        <div class="mp-name">Wayfair</div>
+        <div class="mp-note">Home furnishings &amp; décor marketplace</div>
       </div>
-      <div class="mp-card">
-        <div class="mp-logo" style="background:rgba(255,48,8,0.10);border:1px solid rgba(255,48,8,0.3);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 8h14a2 2 0 012 2v8a2 2 0 01-2 2H7a2 2 0 01-2-2v-8a2 2 0 012-2z" stroke="#FF3008" stroke-width="2"/><path d="M12 8V6M16 8V6" stroke="#FF3008" stroke-width="2" stroke-linecap="round"/><path d="M9 14h10" stroke="#FF3008" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <div class="mp-name">DoorDash</div><div class="mp-note">On-demand delivery &amp; DashMart integration</div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -444,10 +495,11 @@
     <div class="reveal">
       <div class="section-tag">Category Expertise</div>
       <h2>Digital Leadership Across Key Consumer &amp; Retail Categories</h2>
-      <p class="section-sub">Hands-on experience building and scaling digital commerce across 12 consumer and retail verticals.</p>
+      <p class="section-sub">Hands-on experience building and scaling digital commerce across 15 consumer and retail verticals.</p>
     </div>
     <div class="cat-grid reveal">
-      <div class="cat-card"><span class="cat-icon">&#x1F96B;</span><span class="cat-name">CPG, Grocery &amp; Household</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F3ED;</span><span class="cat-name">CPG</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F6D2;</span><span class="cat-name">Grocery &amp; Household</span></div>
       <div class="cat-card"><span class="cat-icon">&#x1F48A;</span><span class="cat-name">Health &amp; Beauty</span></div>
       <div class="cat-card"><span class="cat-icon">&#x1F43E;</span><span class="cat-name">Pet Care</span></div>
       <div class="cat-card"><span class="cat-icon">&#x1F476;</span><span class="cat-name">Baby</span></div>
@@ -456,9 +508,11 @@
       <div class="cat-card"><span class="cat-icon">&#x1F9F8;</span><span class="cat-name">Toys</span></div>
       <div class="cat-card"><span class="cat-icon">&#x26BD;</span><span class="cat-name">Sporting Goods</span></div>
       <div class="cat-card"><span class="cat-icon">&#x1F6CB;&#xFE0F;</span><span class="cat-name">Home &amp; Furnishing</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x1F50C;</span><span class="cat-name">Home Appliances</span></div>
       <div class="cat-card"><span class="cat-icon">&#x1F3D5;&#xFE0F;</span><span class="cat-name">Outdoor &amp; Recreation</span></div>
       <div class="cat-card"><span class="cat-icon">&#x1F38A;</span><span class="cat-name">Party Goods &amp; Halloween</span></div>
       <div class="cat-card"><span class="cat-icon">&#x2728;</span><span class="cat-name">Licensed Products</span></div>
+      <div class="cat-card"><span class="cat-icon">&#x270F;&#xFE0F;</span><span class="cat-name">Office Supplies &amp; Stationery</span></div>
     </div>
   </div>
 </section>
