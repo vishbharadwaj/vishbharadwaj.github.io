@@ -63,8 +63,10 @@
     .hero-photo-ring {
       width: 280px; height: 280px; border-radius: 50%;
       background: conic-gradient(var(--accent) 0deg, var(--accent2) 120deg, transparent 180deg, transparent 360deg);
+      animation: spin 8s linear infinite;
       display: flex; align-items: center; justify-content: center;
     }
+    @keyframes spin { to { transform: rotate(360deg); } }
     .hero-photo {
       width: 268px; height: 268px; border-radius: 50%;
       object-fit: cover; object-position: center 63%;
@@ -765,7 +767,15 @@
 
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Vish transformed our Amazon business at Newell Brands. He brought structure, data rigor, and a genuine understanding of the 1P/3P dynamics that most leaders struggle to navigate. His international expansion work across EU and Japan was particularly impressive — both in pace and commercial outcome. Vish was also a wonderful mentor to a lot of financial support. Vish is an amazing talent overall and any team would be happy to have him.</p><div class="testimonial-author"><div class="author-avatar">MD</div><div><div class="author-name">Makarand Deshmukh</div><div class="author-title">SVP, Customer Experience Strategy &middot; Global Technology Companies</div></div></div></div>
+        <p class="testimonial-text">"Vish transformed our Amazon business at Newell Brands. He brought structure, data rigor, and a genuine understanding of the 1P/3P dynamics that most leaders struggle to navigate. His international expansion work across EU and Japan was particularly impressive — both in pace and commercial outcome. Vish was also a wonderful mentor to a lot of financial support. Vish is an amazing talent overall and any team would be happy to have him.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MD</div>
+          <div>
+            <div class="author-name">Makarand Deshmukh</div>
+            <div class="author-title">SVP, Customer Experience Strategy &middot; Global Technology Companies</div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
