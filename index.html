@@ -64,7 +64,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .hero-photo-ring::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--bg); margin: 3px; }
     .hero-photo { position: absolute; inset: 8px; border-radius: 50%; overflow: hidden; z-index: 1; background: var(--card); display: flex; align-items: center; justify-content: center; }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
     .hero-badge { position: absolute; bottom: 10px; right: -10px; z-index: 2; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
     .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #00E676; flex-shrink: 0; }
     .hero-badge span { color: var(--muted); }
@@ -336,6 +336,7 @@
       <div class="mp-card"><div class="mp-name">Newegg</div><div class="mp-note">Electronics &amp; tech marketplace seller</div></div>
       <div class="mp-card"><div class="mp-name">Uber Eats</div><div class="mp-note">Last-mile &amp; on-demand retail delivery</div></div>
       <div class="mp-card"><div class="mp-name">DoorDash</div><div class="mp-note">On-demand delivery &amp; DashMart integration</div></div>
+      <div class="mp-card"><div class="mp-name">Wayfair</div><div class="mp-note">Home furnishings &amp; décor marketplace</div></div>
     </div>
   </div>
 </section>
@@ -345,19 +346,17 @@
     <div class="reveal">
       <div class="section-tag">Category Depth</div>
       <h2>Digital Leadership Across Key Consumer &amp; Retail Categories</h2>
-      <p class="section-sub">Hands-on eCommerce and digital commerce experience spanning 14 consumer and retail verticals.</p>
+      <p class="section-sub">Hands-on eCommerce and digital commerce experience spanning 12 consumer and retail verticals.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;" class="reveal">
       <div class="cat-chip"><span>&#x1F9F4;</span><strong>CPG</strong></div>
-      <div class="cat-chip"><span>&#x1F6D2;</span><strong>Grocery</strong></div>
+      <div class="cat-chip"><span>&#x1F6D2;</span><strong>Grocery &amp; Household</strong></div>
       <div class="cat-chip"><span>&#x1F48A;</span><strong>Health &amp; Beauty</strong></div>
-      <div class="cat-chip"><span>&#x1F3E0;</span><strong>Household</strong></div>
       <div class="cat-chip"><span>&#x1F43E;</span><strong>Pet Care</strong></div>
       <div class="cat-chip"><span>&#x1F37C;</span><strong>Baby</strong></div>
       <div class="cat-chip"><span>&#x1F457;</span><strong>Fashion &amp; Apparel</strong></div>
       <div class="cat-chip"><span>&#x1F4BB;</span><strong>Consumer Electronics</strong></div>
-      <div class="cat-chip"><span>&#x1F9F8;</span><strong>Toys</strong></div>
-      <div class="cat-chip"><span>&#x26BD;</span><strong>Sporting Goods</strong></div>
+      <div class="cat-chip"><span>&#x1F3C6;</span><strong>Toys &amp; Sporting Goods</strong></div>
       <div class="cat-chip"><span>&#x1F6CB;&#xFE0F;</span><strong>Home &amp; Furnishing</strong></div>
       <div class="cat-chip"><span>&#x26FA;</span><strong>Outdoor &amp; Recreation</strong></div>
       <div class="cat-chip"><span>&#x1F389;</span><strong>Party Goods &amp; Halloween</strong></div>
