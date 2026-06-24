@@ -64,7 +64,11 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .hero-photo-ring::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--bg); margin: 3px; }
     .hero-photo { position: absolute; inset: 8px; border-radius: 50%; overflow: hidden; z-index: 1; background: var(--card); display: flex; align-items: center; justify-content: center; }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+    .hero-badge { position: absolute; bottom: 10px; right: -10px; z-index: 2; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #00E676; flex-shrink: 0; }
+    .hero-badge span { color: var(--muted); }
+    .hero-badge strong { color: var(--text); display: block; }
 
     #stats { padding: 4rem 6%; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; max-width: 1200px; margin: 0 auto; background: var(--border); border-radius: 16px; overflow: hidden; }
@@ -200,6 +204,10 @@
       section { padding: 4rem 5%; }
       .hero-badge { display: none; }
     }
+    .cat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; }
+    .cat-chip:hover { border-color: rgba(0,194,255,0.35); transform: translateY(-3px); }
+    .cat-chip span { font-size: 1.4rem; flex-shrink: 0; }
+    .cat-chip strong { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text); }
   </style>
 </head>
 <body>
@@ -305,6 +313,8 @@
       <div class="expertise-card reveal"><div class="card-icon">&#x2709;&#xFE0F;</div><div class="card-title">Email, CRM &amp; Retention Growth</div><div class="card-body">Positioned email and CRM as core profit levers — behavior-driven lifecycle marketing, not batch-and-blast. Built retention engines spanning onboarding, replenishment, engagement, and reactivation. Grew owned list to 600K+ customers and drove email to 20&#x2013;30%+ of DTC revenue.</div><div class="card-tags"><span class="card-tag">Klaviyo</span><span class="card-tag">Lifecycle</span><span class="card-tag">Segmentation</span><span class="card-tag">LTV</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x1F5FA;&#xFE0F;</div><div class="card-title">eCommerce Transformation &amp; Roadmaps</div><div class="card-body">Transformed under-leveraged digital businesses with clear multi-year roadmaps, focused execution, and disruptive growth strategies. Led org design, capability build-out, and technology modernization. Converted strategy into measurable EBITDA impact consistently.</div><div class="card-tags"><span class="card-tag">0&#x2192;1 Launch</span><span class="card-tag">Roadmaps</span><span class="card-tag">Org Design</span><span class="card-tag">Tech Modernization</span><span class="card-tag">CX Journeys</span><span class="card-tag">Digital Technology Roadmaps</span></div></div>
       <div class="expertise-card reveal"><div class="card-icon">&#x1F91D;</div><div class="card-title">Business Development &amp; Partnerships</div><div class="card-body">Created 100+ vendor partnerships to expand assortment and marketplace reach. Led agency selection for content and performance marketing. Forged third-party fulfillment and print-on-demand partnerships generating $20M+ in Year 1. Won $3M+ in new business as a consultant at JWT and Lowe &amp; Partners.</div><div class="card-tags"><span class="card-tag">Vendor Partnerships</span><span class="card-tag">Agency Relations</span><span class="card-tag">Marketplace Expansion</span></div></div>
+          <div class="expertise-card reveal"><div class="card-icon">&#x1F4B0;</div><div class="card-title">P&amp;L, Profitability &amp; Commercial Leadership</div><div class="card-body">Owned and scaled eCommerce P&amp;Ls exceeding $350M, balancing revenue growth with gross margin, contribution profit, inventory productivity, and EBITDA. Built financial models connecting pricing, promotions, media, fulfillment, and returns to profitability. Established KPI operating rhythms and translated digital strategy into measurable business outcomes.</div><div class="card-tags"><span class="card-tag">P&amp;L</span><span class="card-tag">Contribution Margin</span><span class="card-tag">EBITDA</span><span class="card-tag">Pricing</span><span class="card-tag">Forecasting</span></div></div>
+      <div class="expertise-card reveal"><div class="card-icon">&#x1F6CD;&#xFE0F;</div><div class="card-title">Digital Merchandising, Assortment &amp; Product Innovation</div><div class="card-body">Built category and assortment strategies across 30+ consumer brands and multiple retail verticals. Used customer, search, and sales data to optimize product mix, pricing, bundles, seasonality, and inventory. Created new revenue streams through marketplace kits, personalization, print-on-demand, and licensed products — driving significant incremental sales and stronger margins.</div><div class="card-tags"><span class="card-tag">Digital Category Strategy</span><span class="card-tag">Assortment</span><span class="card-tag">Pricing</span><span class="card-tag">Bundles</span><span class="card-tag">Product Innovation</span></div></div>
     </div>
   </div>
 </section>
@@ -317,15 +327,41 @@
       <p class="section-sub">Built and scaled businesses across every major marketplace — from zero to category-leading positions.</p>
     </div>
     <div class="mp-grid reveal">
-      <div class="mp-card"><div class="mp-logo" style="background:#FF9900;color:#111;font-size:1.6rem;">a</div><div class="mp-name">Amazon</div><div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#0071CE;color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:-0.02em;">WAL&#x2605;MART</div><div class="mp-name">Walmart</div><div class="mp-note">Marketplace seller &amp; retail media · US</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#CC0000;color:#fff;font-size:1.6rem;">&#x2B55;</div><div class="mp-name">Target+</div><div class="mp-note">Target Plus marketplace &amp; digital shelf</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:linear-gradient(135deg,#E53238,#0064D2,#F5AF02,#86B817);color:#fff;font-weight:900;font-size:1rem;">e</div><div class="mp-name">eBay</div><div class="mp-note">Multi-category seller · US &amp; international</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#010101;color:#fff;font-weight:900;font-size:0.85rem;">Tik<span style="color:#ff0050;">Tok</span></div><div class="mp-name">TikTok Shop</div><div class="mp-note">Social commerce &amp; creator-led selling</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#BF0000;color:#fff;font-weight:900;font-size:1.3rem;">R</div><div class="mp-name">Rakuten</div><div class="mp-note">Marketplace &amp; affiliate partnerships</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#E44424;color:#fff;font-weight:900;font-size:1.3rem;">N</div><div class="mp-name">Newegg</div><div class="mp-note">Electronics &amp; tech marketplace seller</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#06C167;color:#fff;font-weight:900;font-size:0.85rem;">Ue</div><div class="mp-name">Uber Eats</div><div class="mp-note">Last-mile &amp; on-demand retail delivery</div></div>
-      <div class="mp-card"><div class="mp-logo" style="background:#FF3008;color:#fff;font-weight:900;font-size:0.85rem;">DD</div><div class="mp-name">DoorDash</div><div class="mp-note">On-demand delivery &amp; DashMart integration</div></div>
+      <div class="mp-card"><div class="mp-name">Amazon</div><div class="mp-note">1P, 3P &amp; Hybrid · US, CA, EU5, JP · DSP, AMS, AMC</div></div>
+      <div class="mp-card"><div class="mp-name">Walmart</div><div class="mp-note">Marketplace seller &amp; retail media · US</div></div>
+      <div class="mp-card"><div class="mp-name">Target+</div><div class="mp-note">Target Plus marketplace &amp; digital shelf</div></div>
+      <div class="mp-card"><div class="mp-name">eBay</div><div class="mp-note">Multi-category seller · US &amp; international</div></div>
+      <div class="mp-card"><div class="mp-name">TikTok Shop</div><div class="mp-note">Social commerce &amp; creator-led selling</div></div>
+      <div class="mp-card"><div class="mp-name">Rakuten</div><div class="mp-note">Marketplace &amp; affiliate partnerships</div></div>
+      <div class="mp-card"><div class="mp-name">Newegg</div><div class="mp-note">Electronics &amp; tech marketplace seller</div></div>
+      <div class="mp-card"><div class="mp-name">Uber Eats</div><div class="mp-note">Last-mile &amp; on-demand retail delivery</div></div>
+      <div class="mp-card"><div class="mp-name">DoorDash</div><div class="mp-note">On-demand delivery &amp; DashMart integration</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="categories" style="background: var(--surface);">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Category Depth</div>
+      <h2>Digital Leadership Across Key Consumer &amp; Retail Categories</h2>
+      <p class="section-sub">Hands-on eCommerce and digital commerce experience spanning 14 consumer and retail verticals.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;" class="reveal">
+      <div class="cat-chip"><span>&#x1F9F4;</span><strong>CPG</strong></div>
+      <div class="cat-chip"><span>&#x1F6D2;</span><strong>Grocery</strong></div>
+      <div class="cat-chip"><span>&#x1F48A;</span><strong>Health &amp; Beauty</strong></div>
+      <div class="cat-chip"><span>&#x1F3E0;</span><strong>Household</strong></div>
+      <div class="cat-chip"><span>&#x1F43E;</span><strong>Pet Care</strong></div>
+      <div class="cat-chip"><span>&#x1F37C;</span><strong>Baby</strong></div>
+      <div class="cat-chip"><span>&#x1F457;</span><strong>Fashion &amp; Apparel</strong></div>
+      <div class="cat-chip"><span>&#x1F4BB;</span><strong>Consumer Electronics</strong></div>
+      <div class="cat-chip"><span>&#x1F9F8;</span><strong>Toys</strong></div>
+      <div class="cat-chip"><span>&#x26BD;</span><strong>Sporting Goods</strong></div>
+      <div class="cat-chip"><span>&#x1F6CB;&#xFE0F;</span><strong>Home &amp; Furnishing</strong></div>
+      <div class="cat-chip"><span>&#x26FA;</span><strong>Outdoor &amp; Recreation</strong></div>
+      <div class="cat-chip"><span>&#x1F389;</span><strong>Party Goods &amp; Halloween</strong></div>
+      <div class="cat-chip"><span>&#x1F3A8;</span><strong>Licensed Products</strong></div>
     </div>
   </div>
 </section>
@@ -339,7 +375,7 @@
     </div>
     <div class="geo-grid">
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1FA;&#x1F1F8; North America</div>
+        <div class="geo-region">North America</div>
         <div class="geo-countries">USA &middot; Canada &middot; Mexico</div>
         <ul class="geo-bullets">
           <li>Scaled Party City eCommerce to <strong>$400M+</strong> across US; expanded cross-border into Canada and Mexico via Amazon and marketplace channels.</li>
@@ -348,7 +384,7 @@
         </ul>
       </div>
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1EC;&#x1F1E7; Europe</div>
+        <div class="geo-region">Europe</div>
         <div class="geo-countries">UK &middot; Germany &middot; France &middot; Italy &middot; Spain</div>
         <ul class="geo-bullets">
           <li>Led Ripple Junction's <strong>EU5 marketplace expansion</strong> (UK, DE, FR, IT, ES) on Amazon Europe — building assortment, content, and media strategy from zero.</li>
@@ -356,7 +392,7 @@
         </ul>
       </div>
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1EF;&#x1F1F5; Japan &amp; Asia-Pacific</div>
+        <div class="geo-region">Japan &amp; Asia-Pacific</div>
         <div class="geo-countries">Japan &middot; Asia-Pacific</div>
         <ul class="geo-bullets">
           <li>Scaled Ripple Junction's <strong>Amazon Japan</strong> business as part of global marketplace expansion into Asia-Pacific.</li>
@@ -364,7 +400,7 @@
         </ul>
       </div>
       <div class="geo-card reveal">
-        <div class="geo-region">&#x1F1EE;&#x1F1F3; India</div>
+        <div class="geo-region">India</div>
         <div class="geo-countries">Bangalore &middot; National campaigns</div>
         <ul class="geo-bullets">
           <li>Built brand and marketing career at <strong>JWT (WPP), Lowe &amp; Partners (IPG)</strong>, and Fisheye — managing national campaigns for Levi's, ING Bank, Britannia, Hanes, and Jockey.</li>
@@ -429,7 +465,7 @@
     <div class="testimonials-grid">
       <div class="testimonial-card reveal"><span class="quote-mark">&#x201C;</span><p class="testimonial-text">Vish stands out due to his positivity, professionalism, desire to learn and ability to bring ideas to execution and implementation. He balances an ability to form strategy based on both external market insight and internal realities, and to bring people with him by explaining what is needed, how it can be done and what the benefits will be. He combined a strong intellect, with good people skills and is a strong communicator and advocate for change.</p><div class="testimonial-author"><div class="author-avatar">WL</div><div><div class="author-name">William Linnane</div><div class="author-title">Chief Executive Officer &middot; Consumer Goods, Retail &amp; Technology</div></div></div></div>
       <div class="testimonial-card reveal"><span class="quote-mark">&#x201C;</span><p class="testimonial-text">Vishwas would be a value to any company based on his intellect, his determination and persistence, his thirst for knowledge and most of all his incredibly positive attitude. Within the eCommerce business he was not only able to get strong sales and margin growth, but able to keep all the category managers motivated to succeed by bringing success stories every week. Vish was also an excellent Chief of Staff &#x2014; he could distill many ideas and thoughts into very concise decks that would be easy to explain to executive management.</p><div class="testimonial-author"><div class="author-avatar">DM</div><div><div class="author-name">David McGlinchey</div><div class="author-title">Chief Development Officer &middot; Sprouts Farmers Market</div></div></div></div>
-      <div class="testimonial-card reveal"><span class="quote-mark">&#x201C;</span><p class="testimonial-text">Vish worked very closely with the BU President on overall business strategy, financials and Board presentations. He also led critical business improvement and expansion projects. He communicated well with various levels in the organization from store associates to the C-level executives. Vish has worked relentlessly to resolve various process deficiencies and infrastructure snags to build sizable business without a lot of financial support. Vish is an amazing talent overall and any team would be happy to have him.</p><div class="testimonial-author"><div class="author-avatar">MD</div><div><div class="author-name">Makarand Deshmukh</div><div class="author-title">SVP, Customer Experience Strategy &middot; Global Technology Companies</div></div></div></div>
+      <div class="testimonial-card reveal"><span class="quote-mark">&#x201C;</span><p class="testimonial-text">Vish worked very closely with the BU President on overall business strategy, financials and Board presentations. He also led critical business improvement and expansion projects. He communicated well with various levels in the organization from store associates to the C-level executives. Vish has worked relentlessly to resolve various process deficiencies and infrastructure snags to build sizable business without a lot of financial support. Vish is an amazing talent overall and any team would be happy to have him.</p><div class="testimonial-author"><div class="author-avatar">MD</div><div><div class="author-name">Makarand Deshmukh</div><div class="author-title">SVP, Customer Experience Strategy &middot; Quest Diagnostics</div></div></div></div>
     </div>
   </div>
 </section>
@@ -439,8 +475,6 @@
     <div class="reveal"><div class="section-tag">Recognition</div><h2>Awards &amp; Education</h2></div>
     <div class="awards-grid">
       <div class="award-card reveal"><div class="award-icon">&#x1F3C6;</div><div><div class="award-title">CEO Award for Outstanding Category Growth</div><div class="award-org">Sears Holdings Corporation &middot; 2012</div></div></div>
-      <div class="award-card reveal"><div class="award-icon">&#x1F3AF;</div><div><div class="award-title">Playmaker &amp; Grand-Slam Awards</div><div class="award-org">Sears Holdings Corporation &middot; 2012&#x2013;2013</div></div></div>
-      <div class="award-card reveal"><div class="award-icon">&#x1F30D;</div><div><div class="award-title">Global Semi-Finalist &#x2014; Top 4% Worldwide</div><div class="award-org">Google Online Marketing Challenge &middot; 2011</div></div></div>
       <div class="award-card reveal"><div class="award-icon">&#x1F393;</div><div><div class="award-title">MBA, Strategy &amp; Marketing</div><div class="award-org">Purdue University, Krannert School of Management &middot; 2011</div></div></div>
       <div class="award-card reveal"><div class="award-icon">&#x1F4F0;</div><div><div class="award-title">Featured: Retail TouchPoints</div><div class="award-org">Party City's Move into Marketplaces</div></div></div>
       <div class="award-card reveal"><div class="award-icon">&#x1F4F0;</div><div><div class="award-title">Featured: Rithum (ChannelAdvisor)</div><div class="award-org">Party City Triples GMV at Peak Season</div></div></div>
