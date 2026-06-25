@@ -98,6 +98,10 @@
     .phil-p-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
     .phil-wheel-wrap { display: flex; align-items: center; justify-content: center; }
     .phil-wheel-svg { width: 300px; height: 300px; filter: drop-shadow(0 0 24px rgba(0,194,255,0.18)) drop-shadow(0 8px 48px rgba(0,0,0,0.7)); overflow: visible; }
+    .wheel-seg { transition: filter 0.25s, transform 0.25s; transform-origin: 150px 150px; cursor: pointer; }
+    .wheel-seg:hover { filter: brightness(1.5) drop-shadow(0 0 10px rgba(0,194,255,0.7)); transform: scale(1.04); }
+    .wheel-center-g { transition: filter 0.25s; cursor: pointer; }
+    .wheel-center-g:hover { filter: brightness(1.4) drop-shadow(0 0 16px rgba(0,194,255,0.8)); }
 
     section { padding: 6rem 6%; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -425,14 +429,14 @@
             </filter>
           </defs>
           <!-- 8 donut segments with aurora radial gradients -->
-          <path d="M 150 78 L 150 15 A 135 135 0 0 1 238.57 48.12 L 197.24 95.66 A 72 72 0 0 0 150 78 Z" fill="url(#rg0)"/>
-          <path d="M 200.91 99.09 L 245.46 54.54 A 135 135 0 0 1 284.67 140.59 L 221.82 144.98 A 72 72 0 0 0 200.91 99.09 Z" fill="url(#rg1)"/>
-          <path d="M 222 150 L 285 150 A 135 135 0 0 1 251.88 238.57 L 204.34 197.24 A 72 72 0 0 0 222 150 Z" fill="url(#rg2)"/>
-          <path d="M 200.91 200.91 L 245.46 245.46 A 135 135 0 0 1 159.41 284.67 L 155.02 221.82 A 72 72 0 0 0 200.91 200.91 Z" fill="url(#rg3)"/>
-          <path d="M 150 222 L 150 285 A 135 135 0 0 1 61.43 251.88 L 102.76 204.34 A 72 72 0 0 0 150 222 Z" fill="url(#rg4)"/>
-          <path d="M 99.09 200.91 L 54.54 245.46 A 135 135 0 0 1 15.33 159.41 L 78.18 155.02 A 72 72 0 0 0 99.09 200.91 Z" fill="url(#rg5)"/>
-          <path d="M 78 150 L 15 150 A 135 135 0 0 1 48.12 61.43 L 95.66 102.76 A 72 72 0 0 0 78 150 Z" fill="url(#rg6)"/>
-          <path d="M 99.09 99.09 L 54.54 54.54 A 135 135 0 0 1 140.59 15.33 L 144.98 78.18 A 72 72 0 0 0 99.09 99.09 Z" fill="url(#rg7)"/>
+          <g class="wheel-seg"><path d="M 150 78 L 150 15 A 135 135 0 0 1 238.57 48.12 L 197.24 95.66 A 72 72 0 0 0 150 78 Z" fill="url(#rg0)"/></g>
+          <g class="wheel-seg"><path d="M 200.91 99.09 L 245.46 54.54 A 135 135 0 0 1 284.67 140.59 L 221.82 144.98 A 72 72 0 0 0 200.91 99.09 Z" fill="url(#rg1)"/></g>
+          <g class="wheel-seg"><path d="M 222 150 L 285 150 A 135 135 0 0 1 251.88 238.57 L 204.34 197.24 A 72 72 0 0 0 222 150 Z" fill="url(#rg2)"/></g>
+          <g class="wheel-seg"><path d="M 200.91 200.91 L 245.46 245.46 A 135 135 0 0 1 159.41 284.67 L 155.02 221.82 A 72 72 0 0 0 200.91 200.91 Z" fill="url(#rg3)"/></g>
+          <g class="wheel-seg"><path d="M 150 222 L 150 285 A 135 135 0 0 1 61.43 251.88 L 102.76 204.34 A 72 72 0 0 0 150 222 Z" fill="url(#rg4)"/></g>
+          <g class="wheel-seg"><path d="M 99.09 200.91 L 54.54 245.46 A 135 135 0 0 1 15.33 159.41 L 78.18 155.02 A 72 72 0 0 0 99.09 200.91 Z" fill="url(#rg5)"/></g>
+          <g class="wheel-seg"><path d="M 78 150 L 15 150 A 135 135 0 0 1 48.12 61.43 L 95.66 102.76 A 72 72 0 0 0 78 150 Z" fill="url(#rg6)"/></g>
+          <g class="wheel-seg"><path d="M 99.09 99.09 L 54.54 54.54 A 135 135 0 0 1 140.59 15.33 L 144.98 78.18 A 72 72 0 0 0 99.09 99.09 Z" fill="url(#rg7)"/></g>
           <!-- Seg 0 (186,53) top-right → Data-Driven (bar chart) -->
           <g transform="translate(186,53) scale(0.98) translate(-10,-10)" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="2,14 6,8 11,11 16,5" fill="none"/>
@@ -470,10 +474,12 @@
             <circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="4.5"/><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.92)"/>
           </g>
           <!-- Center -->
-          <circle cx="150" cy="150" r="65" fill="url(#cg)" stroke="rgba(0,194,255,0.5)" stroke-width="1.5"/>
-          <circle cx="150" cy="150" r="60" fill="none" stroke="rgba(0,194,255,0.12)" stroke-width="6"/>
-          <circle cx="150" cy="150" r="52" fill="none" stroke="rgba(108,99,255,0.1)" stroke-width="3"/>
-          <circle cx="150" cy="150" r="44" fill="none" stroke="rgba(0,194,255,0.06)" stroke-width="2"/>
+          <g class="wheel-center-g">
+            <circle cx="150" cy="150" r="65" fill="url(#cg)" stroke="rgba(0,194,255,0.5)" stroke-width="1.5"/>
+            <circle cx="150" cy="150" r="60" fill="none" stroke="rgba(0,194,255,0.12)" stroke-width="6"/>
+            <circle cx="150" cy="150" r="52" fill="none" stroke="rgba(108,99,255,0.1)" stroke-width="3"/>
+            <circle cx="150" cy="150" r="44" fill="none" stroke="rgba(0,194,255,0.06)" stroke-width="2"/>
+          </g>
         </svg>
       </div>
       <!-- Right principles -->
