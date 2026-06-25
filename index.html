@@ -226,7 +226,7 @@
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-photo-wrap { order: -1; }
-      .hero-photo-ring { width: 260px; height: 260px; }
+      .hero-photo-ring { width: 240px; height: 240px; }
       .hero-tagline { margin: 0 auto 2rem; }
       .hero-btns { justify-content: center; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -235,13 +235,57 @@
       .geo-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      /* Philosophy */
+      .phil-pillars { grid-template-columns: 1fr; }
+      .phil-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .phil-wheel-wrap { order: -1; }
+      .phil-wheel-svg { width: 260px; height: 260px; }
+      /* Expertise */
+      .expertise-grid { grid-template-columns: 1fr; }
+      /* Marketplaces */
+      .mp-grid { grid-template-columns: repeat(2, 1fr); }
+      /* Timeline */
+      .timeline::before { display: none; }
+      .timeline-item { flex-direction: column; gap: 0.75rem; }
+      .timeline-dot { display: none; }
+      /* Impact */
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr; }
+      /* Awards */
+      .awards-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       nav { padding: 1rem 5%; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .impact-grid { grid-template-columns: 1fr; }
-      section { padding: 4rem 5%; }
+      section { padding: 3.5rem 5%; }
       .hero-badge { display: none; }
+      .hero-photo-ring { width: 200px; height: 200px; }
+      /* Stats: 2 cols on small screens, then wrap */
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { padding: 1.25rem 0.75rem; }
+      .stat-num { font-size: 1.8rem; }
+      .stat-label { font-size: 0.7rem; }
+      /* Impact: single col */
+      .impact-grid { grid-template-columns: 1fr; }
+      /* Marketplaces: 2 col */
+      .mp-grid { grid-template-columns: repeat(2, 1fr); }
+      /* Philosophy wheel: smaller */
+      .phil-wheel-svg { width: 220px; height: 220px; }
+      /* Phil principles gap */
+      .phil-principles { gap: 0.75rem; }
+      /* Pillars: 1 col */
+      .phil-pillars { grid-template-columns: 1fr; }
+      /* About chips */
+      .about-chips { gap: 0.4rem; }
+      /* Geo */
+      .geo-grid { grid-template-columns: 1fr; }
+      /* Contact links */
+      .contact-links { flex-direction: column; align-items: center; }
+      /* Buttons */
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+      /* h2 */
+      h2 { font-size: 1.7rem; }
     }
     .cat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; }
     .cat-chip:hover { border-color: rgba(0,194,255,0.8); transform: translateY(-3px); box-shadow: 0 0 28px rgba(0,194,255,0.35), 0 0 56px rgba(0,194,255,0.1), 0 4px 16px rgba(0,0,0,0.4); }
