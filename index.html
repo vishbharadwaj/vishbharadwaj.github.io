@@ -98,8 +98,8 @@
     .phil-p-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
     .phil-wheel-wrap { display: flex; align-items: center; justify-content: center; }
     .phil-wheel-svg { width: 300px; height: 300px; filter: drop-shadow(0 0 24px rgba(0,194,255,0.18)) drop-shadow(0 8px 48px rgba(0,0,0,0.7)); overflow: visible; }
-    .wheel-seg { transition: filter 0.25s, transform 0.25s; transform-origin: 150px 150px; cursor: pointer; }
-    .wheel-seg:hover { filter: brightness(1.5) drop-shadow(0 0 10px rgba(0,194,255,0.7)); transform: scale(1.04); }
+    .wheel-seg { transition: filter 0.3s, transform 0.3s; cursor: pointer; }
+    .wheel-seg:hover { filter: brightness(1.5) drop-shadow(0 0 12px rgba(0,194,255,0.8)); }
     .wheel-center-g { transition: filter 0.25s; cursor: pointer; }
     .wheel-center-g:hover { filter: brightness(1.4) drop-shadow(0 0 16px rgba(0,194,255,0.8)); }
 
@@ -726,6 +726,21 @@
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => navObserver.observe(s));
+
+  // Wheel segment pop-out: each segment pushes outward along its radial angle
+  const segAngles = [-69.5, -24.5, 20.5, 65.5, 110.5, 155.5, 200.5, 245.5];
+  document.querySelectorAll('.wheel-seg').forEach((seg, i) => {
+    const rad = segAngles[i] * Math.PI / 180;
+    const dist = 10;
+    const tx = (dist * Math.cos(rad)).toFixed(2);
+    const ty = (dist * Math.sin(rad)).toFixed(2);
+    seg.addEventListener('mouseenter', () => {
+      seg.style.transform = `translate(${tx}px, ${ty}px) scale(1.06)`;
+    });
+    seg.addEventListener('mouseleave', () => {
+      seg.style.transform = '';
+    });
+  });
 </script>
 </body>
 </html>
